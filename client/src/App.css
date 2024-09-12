@@ -1,0 +1,225 @@
+/* General Styles */
+.container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+/* Blog Row */
+.blog-row {
+    position: relative;
+    border: 2px solid silver;
+    margin-top: 10px;
+    width: 90vw;
+    margin-left: 10px;
+    overflow: hidden; /* Ensure cropped effect */
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    max-height: 250px; /* Fixed height for rectangle */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin:auto;
+    margin-top: 28px;
+
+}
+
+/* Blog Image Container */
+.blog-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Blog Image */
+.blog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop image to fit */
+    border-radius: 8px;
+    transition: transform 0.5s ease; /* Smooth transition for hover */
+}
+
+/* First Overlay (Title) */
+.blog-overlay-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover the full height of the container */
+    background: rgba(38, 46, 45, 0.82);
+    color: #C4DAD2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1;
+    transition: opacity 0.5s ease; /* Smooth transition */
+    opacity: 1; /* Always visible */
+    border-radius: 8px;
+}
+
+/* Title */
+.blog-overlay-title h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    text-align: left; /* Align text to the left */
+    padding-bottom: 5px;
+}
+h2.title-padding {
+    padding: 20px;
+}
+/* Second Overlay (Overview) */
+.blog-overlay-content {
+    position: absolute;
+    bottom: -70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(38, 46, 45, 0.82);
+    color: #C4DAD2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for hover */
+    transform: translateY(20px); /* Start off-screen */
+    overflow: hidden; /* Ensure it doesn't go out of the div */
+    z-index: 10;
+    
+}
+
+/* Show second overlay on hover */
+.blog-image-container:hover .blog-overlay-content {
+    opacity: 1; /* Show on hover */
+    transform: translateY(0); /* Slide into view on hover */
+}
+
+/* Overview */
+.blog-overlay-content .overview {
+    font-size: 14px;
+    text-align: left; /* Align text to the left */
+    max-width: 100%;
+    overflow: hidden;
+    white-space: normal; /* Ensure text wraps */
+    padding:20px;
+}
+
+/* Hide <p> tag */
+p.hidden {
+    display: none;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 56px;
+    padding: 10px;
+    font-size: 24px;
+    background-color: #16423C;
+    color: #C4DAD2;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Added transform transition */
+    opacity: 0; /* Default hidden state */
+    transform: translateY(20px); /* Start off-screen */
+    z-index: 10;
+}
+
+/* Show the Back to Top button when it should be visible */
+.back-to-top.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to visible position */
+}
+
+/* Hide the Back to Top button smoothly */
+.back-to-top.hidden {
+    opacity: 0; /* Fade out */
+    transform: translateY(20px); /* Slide out effect */
+}
+
+/* Side Arrow Button */
+.side-arrow {
+    position: fixed;
+    bottom: 8%;
+    right: 8%;
+    padding: 10px;
+    font-size: 24px;
+    background-color: #16423C;
+    color: #C4DAD2;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in; /* Added transform transition */
+    opacity: 0; /* Default hidden state */
+    transform: translateX(20px); /* Start off-screen */
+}
+
+/* Show the side arrow when it should be visible */
+.side-arrow.visible {
+    opacity: 1; /* Make visible */
+    transform: translateX(0); /* Ensure it's in place */
+    z-index: 10;
+}
+
+/* Hide the side arrow smoothly */
+.side-arrow.hidden {
+    opacity: 0; /* Fade out */
+    transform: translateX(20px); /* Slide out effect */
+}
+
+/* Hide side arrow on mobile screens */
+@media (max-width: 1023px) {
+    .side-arrow {
+        display: none; /* Hide on mobile screens */
+    }
+}
+
+/* SVG Container */
+.svg-container {
+    position: relative;
+    width: 100%; /* Adjust to your needs */
+    height: auto; /* Adjust to your needs */
+}
+
+.svg-container img {
+    width: 100%; /* Ensure SVG scales with container */
+    height: auto;
+    display: block; /* Prevent extra space below the image */
+}
+
+.svg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(38, 46, 45, 0.21), rgba(37, 45, 44, 0.67));
+    z-index: 10; /* Ensure overlay is above the SVG */
+}
+
+/* Customize scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Make the scrollbar thinner */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #16423C; /* Match the color of the NavBar */
+    border-radius: 8px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #C4DAD2; /* Optionally match or complement the NavBar background */
+}
+
+/* Basic smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: Arial, sans-serif; /* Clean font */
+}

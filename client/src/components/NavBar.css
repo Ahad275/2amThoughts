@@ -1,0 +1,164 @@
+/* Basic styling */
+.navbar {
+    background-color: #262e2d;
+    /* Background color */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* position: sticky; */
+
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    /* Logo on the left, nav items on the right */
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo {
+    /* flex: 1; */
+    margin-top: 8px;
+}
+
+/* .brand-logo h4 {
+    margin: 0;
+    color: #C4DAD2; 
+    text-decoration: none;
+} */
+.logolink {
+    margin: 0;
+    color: #C4DAD2;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    /* Space between items */
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #C4DAD2;
+    /* Text color */
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav-link:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    /* Hover color */
+    border-radius: 4px;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: #C4DAD2;
+    /* Text color */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.logout-btn:hover {
+    /* text-decoration: underline; */
+}
+
+/* Hamburger icon styling */
+.hamburger-icon {
+    display: none;
+    font-size: 24px;
+    color: #C4DAD2;
+    /* Text color */
+    cursor: pointer;
+}
+
+/* Responsive design */
+@media (max-width: 1000px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on your nav height */
+        right: 0;
+        background-color: #16423C;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 15px;
+        border-top: 1px solid #ddd;
+    }
+
+    .brand-logo h4 {
+        font-size: 18px;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+}
+
+/* Additional styling for very small screens */
+@media (max-width: 720px) {
+    .navbar {
+        width: 99.5vw;
+        margin-top: -9px;
+        margin-left: -10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on your nav height */
+        right: 0;
+        background-color: #16423C;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-item {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 15px;
+        border-top: 1px solid #ddd;
+    }
+
+    .brand-logo h4 {
+        font-size: 18px;
+    }
+
+    .hamburger-icon {
+        display: block;
+    }
+}

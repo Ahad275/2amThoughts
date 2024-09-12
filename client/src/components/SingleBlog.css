@@ -1,0 +1,37 @@
+.single-blog-container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .blog-content {
+    margin-top: 2rem;
+  }
+  
+  .blog-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #16423C; /* Styling matches your NavBar color */
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border: 2px solid #C4DAD2; /* Light border matching your theme */
+    border-radius: 8px; /* Soft rounded edges */
+  }
+  
+  .blog-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333; /* Dark text for better readability */
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-author {
+    font-size: 1rem;
+    color: #777;
+  }
+  
